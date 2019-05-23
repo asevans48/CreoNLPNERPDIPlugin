@@ -1,5 +1,7 @@
 
-# Project Title Here
+# Core NLP PDI NER Plugin
+
+An entity recognition plugin for Pentaho 8.2+ using CoreNLP.
 
 #### Pre-requisites for building the project:
 * Maven, version 3+
