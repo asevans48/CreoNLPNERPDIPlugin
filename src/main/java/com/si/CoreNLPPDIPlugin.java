@@ -81,9 +81,13 @@ public class CoreNLPPDIPlugin extends BaseStep implements StepInterface {
    * @return                The updated row
    */
   private Object[] packageRow(RowMetaInterface rowMeta, String entity, Object[] r){
+    Object[] orow = r.clone();
     int idx = rowMeta.indexOfValue(meta.getOutField());
-    r[idx] = entity;
-    return r;
+    if(r.length < rowMeta.size()){
+      orow = RowDataUtil.resizeArray(r, rowMeta.size());
+    }
+    orow[idx] = entity;
+    return orow;
   }
 
   /**
